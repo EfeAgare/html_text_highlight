@@ -1,0 +1,13 @@
+highlights = [{
+  start: 20,
+  end: 35,
+  comment: 'Foo'
+}, {
+  start: 73,
+  end: 92,
+  comment: 'Bar'
+}, {
+  start: 50,
+  end: 98,
+  comment: 'Baz'
+}]
