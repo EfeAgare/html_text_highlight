@@ -77,10 +77,10 @@ class HtmlTextHighlight
     comment = get_highlights_comment
     text_replacement =  text.split[range[0].to_i...range[1].to_i].join(" ").to_s
     html_text = """<span class='tooltip' style='background-color:##{SecureRandom.hex(3)}'>#{text_replacement}<span class='tooltiptext'>#{comment}</span></span>"""  if !text_replacement&.empty?
-    html_color_text = text.sub!(/#{text_replacement}/, "#{html_text}") if !text_replacement&.empty?
+    html_highlight_text = text.sub!(/#{text_replacement}/, "#{html_text}") if !text_replacement&.empty?
 
     # For highlight spanning between paragraphs
-    if !text_replacement&.empty? && !html_color_text
+    if !text_replacement&.empty? && !html_highlight_text
       text_content = text.gsub(/<\/?[^>]*>/, "").scan(/\w+/)
       count = text_content.size
       return if (range[0].to_i  > count ||  range[1].to_i > count )
@@ -99,11 +99,11 @@ class HtmlTextHighlight
       large_count = range[1].to_i + diff
       end_span = text.split[large_count.to_i-2...large_count].join(" ").to_s
       large_html_text = """#{end_span} <span class='tooltiptext'>#{comment_hack}</span> </mark></div>"""  if !end_span&.empty?
-      html_color_text = text.sub!(/#{end_span}/, "#{large_html_text}") if !end_span&.empty?
-      return html_color_text
+      html_highlight_text = text.sub!(/#{end_span}/, "#{large_html_text}") if !end_span&.empty?
+      return html_highlight_text
     end
 
-    return html_color_text
+    return html_highlight_text
   end
 
   def html_highlights_to_paragraph
