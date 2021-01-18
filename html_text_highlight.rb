@@ -135,9 +135,7 @@ class HtmlTextHighlight
      div p span.tooltiptext{
       right: 50px
     }
-    .hide {
-      display: 'none'
-    }
+
      div {
       display: inline-table;
      }
