@@ -44,6 +44,6 @@ Ensure you have ruby installed in your machine then you can clone this repositor
 
 ```ruby html_text_highlight.rb content.txt highlight_hash.txt```
 
-This will generate an html file which can be displayed in the browser.
+This will generate a html_hightlight_text.html file which can be displayed in the browser.
 
 **Note:** content.txt and highlight_hash.txt file serves as the container for both the content and highlights variable shown above.
